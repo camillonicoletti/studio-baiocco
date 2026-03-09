@@ -1,22 +1,6 @@
 /* ========================================
    CONTATTI PAGE — layout editoriale
    ======================================== */
-.contatti-split {
-  display: grid;
-  grid-template-columns: 480px 1fr;
-  min-height: 100vh;
-  padding-top: 80px; /* ← aumenta da 60px a 80px */
-  height: calc(100vh); /* ← aggiungi questo */
-}
-
-.contatti-map-panel {
-  position: relative;
-  overflow: hidden;
-  border-radius: 30px;
-  height: calc(100vh - 80px); /* ← aggiungi questo */
-  min-height: 500px;
-}
-
 .contatti-page {
   min-height: 100vh;
 }
