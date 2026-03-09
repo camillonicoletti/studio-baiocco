@@ -1,0 +1,348 @@
+/* ========================================
+   SFONDO UNICO — su body, condiviso da tutto
+   ======================================== */
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-image: url("/img/home/sfondo_bending_capovolto.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+main {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* ========================================
+   CONTENITORE UNICO: hero + servizi
+   ======================================== */
+.page-wrapper {
+  position: relative;
+}
+.page-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(228, 228, 228, 0.45);
+  z-index: 0;
+  pointer-events: none;
+}
+.page-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+/* ========================================
+   HERO — area sticky
+   DEFAULT mobile-first: 300vh
+   Desktop (min 768px): 500vh
+   ======================================== */
+.hero-sticky-area {
+  position: relative;
+  height: 300vh;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .hero-sticky-area {
+    height: 500vh;
+  }
+}
+.hero-sticky-inner {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+/* ========================================
+   SEZIONE SERVIZI
+   ======================================== */
+.services-section {
+  height: auto;
+  min-height: auto;
+  padding: 30px 0 20px;
+  position: relative;
+  z-index: 1;
+}
+/* ========================================
+   TITOLO ANIMATO HERO
+   ======================================== */
+.main__img--container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+.main__img--container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+header {
+  text-align: center;
+  padding: 0 20px;
+}
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.title-stacked {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3em;
+  line-height: 0.85;
+}
+.title-stacked span {
+  display: inline;
+}
+#animatedTitle {
+  font-size: 8rem;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 7px rgba(0,0,0,0.3), 6px 6px 5px rgba(0,0,0,0.2);
+  margin: 0;
+  background: linear-gradient(90deg, white, #c2abd9, #acc2e7, #acc2e7);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 8s ease infinite;
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+  transition: clip-path 1s ease-out, opacity 1s ease-out;
+}
+.gradient-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.6rem;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  margin: 0;
+  color: white;
+  text-shadow:
+    0 2px 6px rgba(255,255,255,0.18),
+    0 6px 14px rgba(255,255,255,0.12);
+  transform: translateY(-4px);
+}
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+#animatedTitle.title-visible {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+}
+.subtitle {
+  opacity: 0;
+  font-size: 2.5rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 350;
+  margin: 0;
+  letter-spacing: 6px;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 7px rgba(0,0,0,0.3), 6px 6px 5px rgba(0,0,0,0.3);
+  transform: translateY(-60px);
+  transition: transform 0.6s ease-out, opacity 1s ease-out;
+}
+.subtitle-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ========================================
+   TILTED CARD
+   ======================================== */
+.tilted-overlay {
+  width: auto;
+  height: auto;
+  position: relative;
+  top: 30px;
+  display: inline-block;
+  background: linear-gradient(180deg, #002384 0%, #003399 50%, #0044aa 100%);
+  border-radius: 10px;
+  padding: 12px 24px;
+  color: white;
+  text-align: center;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.4),
+    0 5px 15px rgba(0,0,0,0.3),
+    0 2px 8px rgba(0,0,0,0.2);
+  will-change: transform;
+  z-index: 10;
+}
+.tilted-overlay h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  line-height: 1.3;
+}
+.titolo-servizi {
+  text-align: center;
+  margin: -5rem 0 6rem;
+}
+.titolo-servizi h1 {
+  background-color: #ffffff;
+  background-size: 100%;
+  font-size: 5rem;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+.service {
+  margin-top: 0;
+}
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px;
+  width: 90%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+/* ========================================
+   LOGHI PARTNER — dimensione uniforme
+   ======================================== */
+.logoloop img {
+  height: 90px !important;
+  width: auto !important;
+}
+/* ========================================
+   TABLET (max 1023px)
+   ======================================== */
+@media (max-width: 1023px) {
+  header {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 30px;
+  }
+  #animatedTitle { font-size: 5.5rem; letter-spacing: 4px; }
+  .subtitle { font-size: 2.6rem; letter-spacing: 4px; }
+  .titolo-servizi { margin: 8rem 0 3rem; }
+  .titolo-servizi h1 { font-size: 2.8rem; padding: 0 20px; }
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
+  }
+}
+/* ========================================
+   MOBILE (max 767px)
+   — viene DOPO tablet, sovrascrive correttamente
+   ======================================== */
+@media (max-width: 767px) {
+  /* Titolo — centrato perfettamente con flexbox */
+  header {
+    position: absolute;
+    inset: 0;
+    top: unset;
+    left: unset;
+    transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+  }
+  #animatedTitle {
+    font-size: 4.5rem;
+    letter-spacing: 2px;
+  }
+  .title-stacked {
+    flex-direction: column;
+    gap: 0;
+    line-height: 0.9;
+  }
+  .title-stacked span {
+    display: block;
+  }
+  .subtitle {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+  }
+  /* Titolo servizi — sovrascrive la regola tablet */
+  .titolo-servizi {
+    margin: -11rem 0 2rem;
+  }
+  .titolo-servizi h1 {
+    font-size: 1.8rem;
+    padding: 0 16px;
+    letter-spacing: 2px;
+  }
+  .gradient-title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  /* Cards servizi — una per riga, centrate */
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    justify-items: center;
+    align-items: center;
+  }
+  /* Forza i Link wrapper a non rompere il layout */
+  .services-container > a {
+    width: 85%;
+    max-width: 340px;
+    display: flex;
+    justify-content: center;
+  }
+  /* Forza le card a stare dentro il Link */
+  .services-container > a > * {
+    width: 100% !important;
+    max-width: 340px !important;
+  }
+  /* Tilted card */
+  .tilted-overlay {
+    top: 16px;
+    padding: 10px 18px;
+  }
+  .tilted-overlay h3 {
+    font-size: 0.95rem;
+    white-space: normal;
+  }
+  .services-section {
+    padding: 10px 0 40px;
+  }
+  /* Loghi partner — gap ridotto su mobile */
+  .logoloop {
+    --logoloop-gap: 60px !important;
+  }
+}
+/* ========================================
+   MOBILE SMALL (max 480px)
+   ======================================== */
+@media (max-width: 480px) {
+  #animatedTitle {
+    font-size: 5rem;
+    letter-spacing: 1.5px;
+  }
+  .subtitle {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  .titolo-servizi h1 {
+    font-size: 1.5rem;
+  }
+  .gradient-title {
+    font-size: 1.5rem;
+  }
+}

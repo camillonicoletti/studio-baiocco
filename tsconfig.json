@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/components/GradientText/GradientText.jsx", "app/components/Aurora/Aurora.jsx", "app/components/lanyard/lanyard.jsx", "app/page.tsx"  ],
   "exclude": ["node_modules"]
 }

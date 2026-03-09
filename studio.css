@@ -1,0 +1,579 @@
+/* ========================================
+   STUDIO PAGE
+   ======================================== */
+
+/* ── HERO WRAPPER (testo + lanyard affiancati) ── */
+.studio-hero-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+}
+
+/* ── HERO (solo testo, occupa metà sinistra) ── */
+.studio-hero {
+  position: relative;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.studio-hero__text {
+  padding-left: 6%;
+  padding-right: 4%;
+  width: 100%;
+  z-index: 10;
+}
+
+.studio-hero__text h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #00247b;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.studio-hero__text h1 span {
+  background: linear-gradient(90deg, #00247b, #7b9fd4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.studio-hero__subtitle {
+  font-size: 1.2rem;
+  color: #444;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+}
+
+/* ── LANYARD (occupa metà destra) ── */
+.studio-lanyard-section {
+  width: 55%;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* ── CITAZIONE ── */
+.studio-hero__quote {
+  position: relative;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 36, 123, 0.18);
+}
+
+.studio-hero__quote-mark {
+  font-size: 7rem;
+  line-height: 0;
+  position: absolute;
+  top: 52px;
+  left: -18px;
+  color: #00247b;
+  opacity: 0.10;
+  font-family: Georgia, serif;
+  pointer-events: none;
+  user-select: none;
+}
+
+.studio-hero__quote blockquote {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #333;
+  line-height: 1.85;
+  margin: 0 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.studio-hero__quote cite {
+  font-size: 0.85rem;
+  color: #00247b;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── COUNTERS ── */
+.studio-counters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 80px 40px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 36, 123, 0.1);
+  border-bottom: 1px solid rgba(0, 36, 123, 0.1);
+}
+
+.studio-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  text-align: center;
+}
+
+.studio-counter__number {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00247b, #7b9fd4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.studio-counter__label {
+  font-size: 1rem;
+  color: #555;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.studio-counter__divider {
+  width: 1px;
+  height: 80px;
+  background: rgba(0, 36, 123, 0.2);
+  flex-shrink: 0;
+}
+
+/* ── VALORI ── */
+.studio-values {
+  padding: 100px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.studio-values__title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #00247b;
+  margin-bottom: 60px;
+}
+
+/* ── BENTO GRID ── */
+.bento-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bento-row {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.bento-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  min-height: 240px;
+  /* rimosso min-height fisso: la card si adatta al contenuto */
+}
+
+.bento-card--large { flex: 2; }
+.bento-card--small { flex: 1; }
+.bento-card--full  { flex: 1; }
+
+.bento-card--blue {
+  background: linear-gradient(135deg, #0a2e90 0%, #2a5cd4 60%, #5a8aee 100%);
+}
+
+.bento-card--purple {
+  background: linear-gradient(160deg, #baade3 0%, #7a6cc0 50%, #3a2d8a 100%);
+}
+
+.bento-card--indigo {
+  background: linear-gradient(120deg, #021a5e 0%, #022581 40%, #0a3a8a 100%);
+}
+
+.bento-card__text {
+  padding: 36px 40px;
+  /* testo occupa tutta la larghezza disponibile */
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.bento-card__text--wide {
+  max-width: 100%;
+}
+
+.bento-card__icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.bento-card h3 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.bento-card p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+}
+
+.bento-card__deco { position: absolute; pointer-events: none; }
+.bento-card__deco--right { right: -40px; top: 50%; transform: translateY(-50%); }
+.bento-card__deco--bottom { right: 40px; bottom: -60px; }
+
+.bento-deco-circle { border-radius: 50%; position: absolute; opacity: 0.15; }
+.bento-deco-circle--1 { width: 260px; height: 260px; background: rgba(255,255,255,0.3); top: -60px; right: 20px; }
+.bento-deco-circle--2 { width: 180px; height: 180px; background: rgba(255,255,255,0.2); top: 60px; right: 130px; }
+.bento-deco-circle--3 { width: 300px; height: 300px; background: rgba(255,255,255,0.2); bottom: -80px; right: 80px; }
+.bento-deco-circle--4 { width: 200px; height: 200px; background: rgba(255,255,255,0.15); bottom: 20px; right: 260px; }
+
+/* ── MARQUEE ── */
+.studio-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 28px 0;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 36, 123, 0.08);
+  border-bottom: 1px solid rgba(0, 36, 123, 0.08);
+}
+
+.studio-marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.studio-marquee__word {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #022581;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  padding: 0 24px;
+}
+
+.studio-marquee__dot {
+  font-size: 1.4rem;
+  color: #8092bc;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.studio-marquee:hover .studio-marquee__track {
+  animation-play-state: paused;
+}
+
+/* ── CERTIFICAZIONI ── */
+.studio-cert {
+  padding: 100px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.studio-cert__title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #00247b;
+  margin-bottom: 12px;
+}
+
+.studio-cert__subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 60px;
+  letter-spacing: 0.04em;
+}
+
+.studio-cert__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.studio-cert__card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 36px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 36, 123, 0.1);
+  border-radius: 18px;
+  border-left: 4px solid var(--cert-color);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.studio-cert__card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 8px 30px rgba(0, 36, 123, 0.1);
+}
+
+.studio-cert__icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 37, 129, 0.07);
+  border-radius: 12px;
+}
+
+.studio-cert__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.studio-cert__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.studio-cert__info strong {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #022581;
+}
+
+.studio-cert__info span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.studio-cert__check {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--cert-color);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   MEDIA QUERIES
+   ======================================== */
+
+/* ── TABLET ── */
+@media (max-width: 1023px) {
+  .studio-hero-wrapper {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .studio-hero {
+    width: 100%;
+    height: auto;
+  }
+
+  .studio-hero__text {
+    padding: 80px 30px 30px;
+  }
+
+  .studio-hero__text h1 {
+    font-size: 2.2rem;
+  }
+
+  .studio-lanyard-section {
+    width: 100%;
+    height: 55vh;
+  }
+
+  .bento-row { flex-direction: column; }
+  .bento-card--large,
+  .bento-card--small { flex: 1; }
+  .bento-card__text { max-width: 75%; }
+  .bento-card__text--wide { max-width: 75%; }
+
+  .studio-cert { padding: 80px 30px; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 767px) {
+
+  .studio-hero-wrapper {
+    flex-direction: column;
+  }
+
+  .studio-hero {
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .studio-hero__text {
+    padding: 20px 24px 30px;
+    text-align: center;
+  }
+
+  .studio-hero__text h1 {
+    font-size: 1.9rem;
+  }
+
+  .studio-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .studio-hero__quote {
+    text-align: left;
+    margin-top: 1.8rem;
+    padding-top: 1.5rem;
+  }
+
+  .studio-hero__quote-mark {
+    left: -8px;
+    font-size: 5rem;
+  }
+
+  .studio-hero__quote blockquote {
+    font-size: 0.95rem;
+  }
+
+  .studio-lanyard-section {
+    margin-top: 5rem;
+    width: 100%;
+    height: 40vh;
+  }
+
+  /* COUNTERS */
+  .studio-counters {
+    flex-direction: column;
+    gap: 36px;
+    padding: 50px 24px;
+  }
+
+  .studio-counter__divider {
+    width: 60px;
+    height: 1px;
+  }
+
+  .studio-counter__number {
+    font-size: 2.8rem;
+  }
+
+  .studio-counter__label {
+    font-size: 0.85rem;
+  }
+
+  /* VALORI */
+  .studio-values {
+    padding: 60px 16px;
+  }
+
+  .studio-values__title {
+    font-size: 2rem;
+    margin-bottom: 36px;
+  }
+
+  .bento-grid { gap: 14px; }
+  .bento-row  { gap: 14px; flex-direction: column; }
+
+  .bento-card {
+    border-radius: 18px;
+  }
+
+  .bento-card__text {
+    max-width: 100%;
+    padding: 28px 22px;
+  }
+
+  .bento-card__text--wide {
+    max-width: 100%;
+    padding: 28px 22px;
+  }
+
+  .bento-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .bento-card p {
+    font-size: 0.9rem;
+  }
+
+  .bento-card__icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .bento-card__deco { display: none; }
+
+  /* MARQUEE */
+  .studio-marquee {
+    padding: 20px 0;
+  }
+
+  .studio-marquee__word {
+    font-size: 0.85rem;
+    padding: 0 16px;
+  }
+
+  /* CERTIFICAZIONI */
+  .studio-cert {
+    padding: 60px 16px;
+  }
+
+  .studio-cert__title {
+    font-size: 2rem;
+  }
+
+  .studio-cert__subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 36px;
+  }
+
+  .studio-cert__card {
+    padding: 18px 16px;
+    gap: 14px;
+    border-radius: 14px;
+  }
+
+  .studio-cert__icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.6rem;
+    border-radius: 10px;
+  }
+
+  .studio-cert__info strong {
+    font-size: 0.95rem;
+  }
+
+  .studio-cert__info span {
+    font-size: 0.8rem;
+  }
+
+  .studio-cert__check {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+}
