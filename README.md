@@ -1,36 +1,154 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Studio Baiocco Romana — Sito Web Ufficiale
 
-## Getting Started
+Sito web ufficiale di **Studio Baiocco Romana — Consulenza del Lavoro**, realizzato con Next.js e TypeScript. Il sito presenta i servizi dello studio, permette ai clienti di inviare richieste di contatto e include un'area riservata ai clienti.
 
-First, run the development server:
+🌐 **Live:** [studioromanabaiocco.it](https://www.studioromanabaiocco.it)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Stack Tecnologico
+
+| Tecnologia | Utilizzo |
+|---|---|
+| [Next.js 14](https://nextjs.org/) | Framework React con App Router |
+| [React](https://react.dev/) | UI e componenti |
+| [TypeScript](https://www.typescriptlang.org/) | Tipizzazione statica |
+| [Tailwind CSS](https://tailwindcss.com/) | Styling e layout |
+| [Resend](https://resend.com/) | Invio email dal form di contatto |
+| [Google Analytics 4](https://analytics.google.com/) | Analisi del traffico |
+| [Google Maps Embed](https://developers.google.com/maps) | Mappa nella pagina contatti |
+| [Vercel](https://vercel.com/) | Hosting e deploy continuo |
+| [Aruba](https://www.aruba.it/) | Registrazione dominio |
+
+---
+
+## Struttura del Progetto
+
+```
+studio-baiocco/
+├── app/
+│   ├── layout.tsx              # Layout globale, metadata, GA4
+│   ├── page.tsx                # Homepage
+│   ├── globals.css             # Stili globali
+│   ├── navbar.css              # Stili navbar
+│   ├── favicon.ico             # Favicon
+│   ├── icon.png                # Icona Next.js
+│   ├── apple-icon.png          # Icona Apple
+│   ├── studio/
+│   │   └── page.tsx            # Pagina Studio
+│   ├── servizi/
+│   │   ├── consulenza/
+│   │   │   └── page.tsx        # Servizio: Consulenza del lavoro
+│   │   ├── paghe/
+│   │   │   └── page.tsx        # Servizio: Elaborazione paghe
+│   │   └── amministrazione/
+│   │       └── page.tsx        # Servizio: Amministrazione del personale
+│   ├── modulistica/
+│   │   └── page.tsx            # Pagina Modulistica
+│   ├── contatti/
+│   │   └── page.tsx            # Pagina Contatti con form e mappa
+│   └── privacy/
+│       └── page.tsx            # Privacy Policy (GDPR)
+├── api/
+│   └── contact/
+│       └── route.ts            # API route per invio email con Resend
+├── public/
+│   └── img/
+│       └── logo/
+│           └── logo_piccolo.png
+├── .env.local                  # Variabili d'ambiente (non versionato)
+├── next.config.ts
+├── tailwind.config.ts
+├── tsconfig.json
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pagine
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Percorso | Descrizione |
+|---|---|
+| `/` | Homepage con hero, servizi e CTA |
+| `/studio` | Presentazione dello studio e del team |
+| `/servizi/consulenza` | Consulenza del lavoro |
+| `/servizi/paghe` | Elaborazione paghe |
+| `/servizi/amministrazione` | Amministrazione del personale |
+| `/modulistica` | Download modulistica |
+| `/contatti` | Form di contatto + Google Maps |
+| `/privacy` | Informativa Privacy (GDPR) |
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Avvio in Locale
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prerequisiti
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Node.js](https://nodejs.org/) versione 18 o superiore
+- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/)
 
-## Deploy on Vercel
+### Installazione
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# 1. Clona il repository
+git clone https://github.com/tuo-username/studio-baiocco.git
+cd studio-baiocco
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 2. Installa le dipendenze
+npm install
+
+# 3. Crea il file delle variabili d'ambiente
+cp .env.example .env.local
+# → Modifica .env.local con le tue chiavi API
+
+# 4. Avvia il server di sviluppo
+npm run dev
+```
+
+Apri [http://localhost:3000](http://localhost:3000) nel browser.
+
+### Comandi Disponibili
+
+```bash
+npm run dev       # Avvia il server di sviluppo (con hot reload)
+npm run build     # Build di produzione
+npm run start     # Avvia il server di produzione (dopo build)
+npm run lint      # Controllo ESLint
+```
+
+---
+
+## Servizi Esterni
+
+### Resend
+Gestisce l'invio delle email dal form di contatto. Le richieste vengono inviate tramite una API route Next.js (`/api/contact`) che chiama l'API di Resend. [Dashboard Resend →](https://resend.com/overview)
+
+### Google Analytics 4
+Il tag GA4 è incluso nel `layout.tsx` globale. I cookie analitici vengono caricati solo previo consenso dell'utente, come da Privacy Policy. [Dashboard GA4 →](https://analytics.google.com/)
+
+### Google Maps
+Mappa embed nella pagina `/contatti` che mostra la sede dello studio (Via Pietro Nenni, 10 — Matera).
+
+### Aruba
+Gestisce la registrazione e il DNS del dominio `studioromanabaiocco.it`. Il dominio punta ai server di Vercel tramite record DNS.
+
+---
+
+## Privacy & GDPR
+
+Il sito è conforme al Regolamento UE 2016/679 (GDPR). L'informativa completa è disponibile su `/privacy` e documenta il trattamento dei dati raccolti tramite form di contatto, cookie analitici (GA4), e i servizi di terze parti (Vercel, Aruba, Resend, Google).
+
+---
+
+## Autore
+
+Sviluppato da **Camillo Nicoletti**
+
+Per il cliente: **Studio Baiocco Romana — Consulenza del Lavoro**
+📍 Via Pietro Nenni, 10 — Matera
+📧 studiobaiocco@gmail.com
+📞 (+39) 347 700 5683
+
+---
+
+*© 2026 Studio Baiocco Romana. Tutti i diritti riservati.*
