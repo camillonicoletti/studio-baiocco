@@ -9,11 +9,6 @@ import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 
-export const metadata = {
-  title: 'Studio Romana Baiocco - Consulente del Lavoro a Matera',
-  description: 'Studio Baiocco, consulente del lavoro a Matera. Elaborazione paghe, amministrazione del personale e consulenza aziendale professionale.',
-  keywords: 'studio baiocco, studio romana baiocco, romana baiocco, consulente del lavoro, studio consulente del lavoro, consulente del lavoro matera, studio baiocco matera, studio romana baiocco matera, consulente del lavoro studio baiocco matera, studio baiocco consulente del lavoro matera, matera studio romana baiocco, matera studi consulenti del lavoro',
-};
 
 
 function AnimatedPath({ d, fill, progress }: {
