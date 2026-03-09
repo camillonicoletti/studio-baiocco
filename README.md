@@ -138,10 +138,9 @@ Il sito è conforme al Regolamento UE 2016/679 (GDPR). L'informativa completa è
 
 ## Autore
 
-Sviluppato da **[Camillo Nicoletti →](www.linkedin.com/in/camillonicoletti)**
+Sviluppato da **[Camillo Nicoletti](www.linkedin.com/in/camillonicoletti)**
 
 Per il cliente: **Studio Baiocco Romana — Consulenza del Lavoro**
-📍 Via Pietro Nenni, 10 — Matera
 📧 studiobaiocco@gmail.com
 📞 (+39) 347 700 5683
 
