@@ -5,16 +5,16 @@
   display: grid;
   grid-template-columns: 480px 1fr;
   min-height: 100vh;
-  padding-top: 60px;
-  height: 100vh; /* ← aggiungi questo */
+  padding-top: 80px; /* ← aumenta da 60px a 80px */
+  height: calc(100vh); /* ← aggiungi questo */
 }
 
 .contatti-map-panel {
   position: relative;
   overflow: hidden;
   border-radius: 30px;
-  height: 100%; /* ← aggiungi questo */
-  min-height: 500px; /* ← aggiungi questo */
+  height: calc(100vh - 80px); /* ← aggiungi questo */
+  min-height: 500px;
 }
 
 .contatti-page {
