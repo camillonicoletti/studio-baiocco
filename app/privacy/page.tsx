@@ -100,6 +100,9 @@ export default function PrivacyPage() {
             <SubSection title="2.2 — Dati di navigazione">
               <p>I sistemi informatici e le procedure software preposte al funzionamento del sito acquisiscono, nel corso del loro normale esercizio, alcuni dati la cui trasmissione è implicita nell'uso dei protocolli di comunicazione Internet, tra cui: indirizzi IP, tipo di browser, sistema operativo, pagine visitate e orari di accesso. Tali dati non sono raccolti per essere associati a interessati identificati, ma per la sola verifica del corretto funzionamento del sito.</p>
             </SubSection>
+            <SubSection title="2.3 — Cookie analitici (Google Analytics 4)">
+              <p>Previo consenso dell'utente, il sito utilizza <strong>Google Analytics 4</strong> per raccogliere dati statistici anonimi sull'utilizzo del sito (pagine visitate, durata della sessione, provenienza geografica, tipo di dispositivo). Google Analytics imposta cookie di analisi che possono raccogliere l'indirizzo IP dell'utente, che viene però anonimizzato prima dell'archiviazione. Il consenso può essere revocato in qualsiasi momento (vedi sezione 8 — Cookie).</p>
+            </SubSection>
           </Section>
 
           <Section num="3" title="Finalità e base giuridica del trattamento">
@@ -114,6 +117,8 @@ export default function PrivacyPage() {
                 {[
                   ['Rispondere alle richieste inviate tramite il form di contatto', 'Interesse legittimo del Titolare (art. 6, par. 1, lett. f GDPR) / Esecuzione di misure precontrattuali'],
                   ['Gestione della comunicazione con potenziali clienti', 'Interesse legittimo del Titolare'],
+                  ['Analisi statistica anonima del traffico web tramite Google Analytics 4', 'Consenso dell\'interessato (art. 6, par. 1, lett. a GDPR)'],
+                  ['Erogazione del sito tramite infrastruttura Vercel e dominio Aruba', 'Interesse legittimo del Titolare (art. 6, par. 1, lett. f GDPR)'],
                   ['Adempimento di obblighi di legge', 'Obbligo legale (art. 6, par. 1, lett. c GDPR)'],
                 ].map(([f, b], i) => (
                   <tr key={i} style={{ background: i % 2 === 0 ? '#f8f9fb' : '#fff' }}>
@@ -130,7 +135,8 @@ export default function PrivacyPage() {
             <ul>
               <li>I dati del form di contatto vengono trasmessi via email e conservati nelle caselle di posta elettronica del Titolare.</li>
               <li>I dati vengono conservati per il tempo necessario alla gestione della richiesta e, successivamente, per un massimo di <strong>24 mesi</strong>, salvo obblighi di legge che richiedano una conservazione più lunga.</li>
-              <li>Non viene effettuato alcun trattamento automatizzato né profilazione degli utenti.</li>
+              <li>I dati raccolti da Google Analytics 4 sono conservati da Google per un periodo configurabile dal Titolare, impostato di default a <strong>14 mesi</strong>.</li>
+              <li>Non viene effettuato alcun trattamento automatizzato né profilazione degli utenti a fini commerciali.</li>
             </ul>
           </Section>
 
@@ -143,13 +149,32 @@ export default function PrivacyPage() {
           </Section>
 
           <Section num="6" title="Servizi di terze parti (Sub-Responsabili)">
+
             <SubSection title="Resend — Invio email transazionali">
-              <p>Il sito utilizza <strong>Resend</strong> (Resend Inc., USA) per la trasmissione delle email generate dal form di contatto. Resend agisce come Responsabile del trattamento. I dati trasmessi (nome, email, telefono, messaggio) vengono utilizzati esclusivamente per l'inoltro della comunicazione.</p>
-              <p>Per maggiori informazioni: <a href="https://resend.com" target="_blank" rel="noreferrer">resend.com/privacy</a></p>
+              <p>Il sito utilizza <strong>Resend</strong> (Resend Inc., USA) per la trasmissione delle email generate dal form di contatto. Resend agisce come Responsabile del trattamento. I dati trasmessi (nome, email, telefono, messaggio) vengono utilizzati esclusivamente per l'inoltro della comunicazione. Il trasferimento avviene nel rispetto delle Clausole Contrattuali Standard approvate dalla Commissione Europea.</p>
+              <p>Per maggiori informazioni: <a href="https://resend.com/privacy" target="_blank" rel="noreferrer">resend.com/privacy</a></p>
             </SubSection>
+
+            <SubSection title="Vercel — Hosting e deployment">
+              <p>Il sito è pubblicato e distribuito tramite <strong>Vercel Inc.</strong> (USA), piattaforma di hosting e deployment. Vercel gestisce l'infrastruttura server, il routing delle richieste HTTP e la distribuzione dei contenuti tramite CDN globale. Nel normale funzionamento del servizio, Vercel può elaborare dati di connessione quali indirizzo IP, intestazioni HTTP e dati di navigazione per finalità di sicurezza e ottimizzazione delle prestazioni. Vercel agisce in qualità di Responsabile del trattamento ai sensi dell'art. 28 GDPR; il trasferimento dei dati verso gli USA avviene in conformità alle Clausole Contrattuali Standard.</p>
+              <p>Per maggiori informazioni: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noreferrer">vercel.com/legal/privacy-policy</a></p>
+            </SubSection>
+
+            <SubSection title="Aruba S.p.A. — Registrazione e gestione del dominio">
+              <p>Il dominio <strong>studiobaioccoromana.it</strong> è registrato e gestito tramite <strong>Aruba S.p.A.</strong> (Italia, Ponte San Pietro — BG), provider italiano soggetto alla normativa europea sulla protezione dei dati. Aruba gestisce i dati anagrafici e di contatto del titolare del dominio ai fini della registrazione e del mantenimento del dominio stesso, secondo i requisiti previsti da Registro.it e ICANN.</p>
+              <p>Per maggiori informazioni: <a href="https://www.aruba.it/documents/tc-files/it/03_informativa_privacy_clienti.aspx" target="_blank" rel="noreferrer">aruba.it — Informativa Privacy</a></p>
+            </SubSection>
+
+            <SubSection title="Google Analytics 4 — Analisi del traffico">
+              <p>Previo consenso, il sito utilizza <strong>Google Analytics 4</strong> (Google LLC, USA) per raccogliere statistiche anonime sull'utilizzo del sito. Google Analytics imposta cookie di analisi (come <code>_ga</code>, <code>_ga_*</code>) che raccolgono dati sul comportamento degli utenti. L'indirizzo IP viene anonimizzato prima dell'archiviazione. Google LLC agisce come Responsabile del trattamento; il trasferimento verso gli USA avviene in conformità alle Clausole Contrattuali Standard e al Data Processing Amendment di Google.</p>
+              <p>L'utente può opporsi alla raccolta dei dati da parte di Google Analytics installando il componente aggiuntivo per browser disponibile su: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noreferrer">tools.google.com/dlpage/gaoptout</a></p>
+              <p>Per maggiori informazioni: <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">policies.google.com/privacy</a></p>
+            </SubSection>
+
             <SubSection title="Google Maps — Mappa interattiva">
               <p>La pagina Contatti incorpora una mappa di <strong>Google Maps</strong> (Google LLC, USA). Il caricamento della mappa può comportare la raccolta di dati da parte di Google secondo la propria <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.</p>
             </SubSection>
+
           </Section>
 
           <Section num="7" title="Diritti dell'interessato">
@@ -161,17 +186,55 @@ export default function PrivacyPage() {
               <li><b>Limitazione</b> — richiedere la limitazione del trattamento</li>
               <li><b>Portabilità</b> — ricevere i propri dati in formato strutturato e leggibile da dispositivo automatico</li>
               <li><b>Opposizione</b> — opporsi in qualsiasi momento al trattamento basato su interesse legittimo</li>
+              <li><b>Revoca del consenso</b> — revocare in qualsiasi momento il consenso prestato per i trattamenti basati su di esso (es. Google Analytics), senza pregiudicare la liceità del trattamento precedente alla revoca</li>
               <li><b>Reclamo</b> — proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noreferrer">garanteprivacy.it</a>)</li>
             </ul>
             <p>Per esercitare i propri diritti, è possibile contattare il Titolare scrivendo a: <a href="mailto:studiobaiocco@gmail.com">studiobaiocco@gmail.com</a></p>
           </Section>
 
           <Section num="8" title="Cookie">
-            <p>Il sito <strong>studiobaioccoromana.it</strong> non utilizza cookie di profilazione né cookie di terze parti a fini pubblicitari. Vengono utilizzati esclusivamente cookie tecnici strettamente necessari al funzionamento del sito (es. gestione della sessione), per i quali non è richiesto il consenso ai sensi della normativa vigente.</p>
+            <p>Il sito <strong>studiobaioccoromana.it</strong> utilizza le seguenti tipologie di cookie:</p>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem', marginTop: 12 }}>
+              <thead>
+                <tr style={{ background: '#01247e', color: '#fff' }}>
+                  <th style={{ padding: '10px 14px', textAlign: 'left' }}>Tipologia</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left' }}>Cookie</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left' }}>Finalità</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left' }}>Consenso</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Tecnici', 'Cookie di sessione', 'Funzionamento del sito', 'Non richiesto'],
+                  ['Analitici', '_ga, _ga_*', 'Statistiche di navigazione (Google Analytics 4)', 'Richiesto'],
+                ].map(([tipo, nome, finalita, consenso], i) => (
+                  <tr key={i} style={{ background: i % 2 === 0 ? '#f8f9fb' : '#fff' }}>
+                    <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee' }}><b>{tipo}</b></td>
+                    <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee', fontFamily: 'monospace', fontSize: '0.83rem', color: '#01247e' }}>{nome}</td>
+                    <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee' }}>{finalita}</td>
+                    <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee', color: consenso === 'Richiesto' ? '#c0392b' : '#27ae60', fontWeight: 700 }}>{consenso}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p style={{ marginTop: 14 }}>
+              I cookie analitici vengono installati solo previo consenso esplicito dell'utente. Il consenso può essere revocato in qualsiasi momento agendo sulle impostazioni del proprio browser o tramite il componente aggiuntivo di opt-out di Google Analytics disponibile su{' '}
+              <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noreferrer">tools.google.com/dlpage/gaoptout</a>.
+            </p>
+            <p>
+              Per istruzioni su come gestire i cookie dal browser: <a href="https://www.garanteprivacy.it/cookie" target="_blank" rel="noreferrer">garanteprivacy.it/cookie</a>.
+            </p>
           </Section>
 
           <Section num="9" title="Trasferimento dei dati extra-UE">
-            <p>L'utilizzo del servizio Resend può comportare il trasferimento dei dati verso gli Stati Uniti. Tale trasferimento avviene nel rispetto delle garanzie previste dal GDPR, in particolare mediante le Clausole Contrattuali Standard approvate dalla Commissione Europea.</p>
+            <p>Alcuni servizi utilizzati dal sito comportano il trasferimento di dati personali verso paesi terzi, in particolare gli <strong>Stati Uniti d'America</strong>. I soggetti coinvolti sono:</p>
+            <ul>
+              <li><b>Vercel Inc.</b> — hosting e infrastruttura del sito</li>
+              <li><b>Resend Inc.</b> — invio email transazionali</li>
+              <li><b>Google LLC</b> — Google Analytics 4 e Google Maps</li>
+            </ul>
+            <p>Tutti i trasferimenti avvengono nel rispetto delle garanzie previste dal GDPR, in particolare mediante le <strong>Clausole Contrattuali Standard (SCC)</strong> approvate dalla Commissione Europea ai sensi dell'art. 46 GDPR, e/o in conformità al <strong>EU-US Data Privacy Framework</strong> ove applicabile.</p>
+            <p><strong>Aruba S.p.A.</strong> è invece un provider italiano con sede nell'Unione Europea: il trattamento dei dati relativi al dominio non comporta trasferimenti extra-UE.</p>
           </Section>
 
           <Section num="10" title="Modifiche alla presente informativa">
