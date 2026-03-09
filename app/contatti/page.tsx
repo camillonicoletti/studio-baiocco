@@ -16,6 +16,11 @@ export default function ContattiPage() {
   const [error, setError] = useState<string | null>(null);
   const [focused, setFocused] = useState<string | null>(null);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -80,7 +85,7 @@ export default function ContattiPage() {
 
   return (
     <>
-      <main className="contatti-page">
+      <main className="contatti-page" style={{ opacity: mounted ? 1 : 0, transition: 'opacity 0.2s ease' }}>
         {/* SFONDO */}
         <div style={{ position: 'fixed', inset: 0, zIndex: -1, backgroundImage: "url('/img/home/sfondo_bending_capovolto.jpg')", backgroundSize: 'cover', backgroundPosition: 'center center', backgroundRepeat: 'no-repeat' }} />
         <div style={{ position: 'fixed', inset: 0, zIndex: -1, backgroundColor: 'rgba(255,255,255,0.45)' }} />
@@ -386,12 +391,12 @@ export default function ContattiPage() {
             </div>
           </div>
           <div className="footer-bottom">
-      <p>© StudioBaiocco 2026. All rights reserved | Website created by{' '}
-      <a href="https://www.linkedin.com/in/camillonicoletti" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
-      Camillo Nicoletti
-    </a>
-  </p>
-</div>
+            <p>© StudioBaiocco 2026. All rights reserved | Website created by{' '}
+              <a href="https://www.linkedin.com/in/camillonicoletti" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
+                Camillo Nicoletti
+              </a>
+            </p>
+          </div>
         </footer>
 
         {/* MOBILE OVERLAY */}
