@@ -1,6 +1,12 @@
 /* ========================================
    CONTATTI PAGE — layout editoriale
    ======================================== */
+.contatti-map-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  min-height: 600px; /* ← aggiungi questo */
+}
 
 .contatti-page {
   min-height: 100vh;
