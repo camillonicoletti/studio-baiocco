@@ -1,4 +1,4 @@
-# Studio Baiocco Romana — Sito Web Ufficiale
+# Studio Baiocco Romana — Sito Web
 
 Sito web ufficiale di **Studio Baiocco Romana — Consulenza del Lavoro**, realizzato con Next.js e TypeScript. Il sito presenta i servizi dello studio, permette ai clienti di inviare richieste di contatto e include un'area riservata ai clienti.
 
