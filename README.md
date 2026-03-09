@@ -140,7 +140,7 @@ Il sito è conforme al Regolamento UE 2016/679 (GDPR). L'informativa completa è
 
 Sviluppato da **[Camillo Nicoletti](www.linkedin.com/in/camillonicoletti)**
 
-Per il cliente: **Studio Baiocco Romana — Consulenza del Lavoro**
+Per il cliente: **Studio Baiocco Romana — Consulenza del Lavoro** <br></br>
 📧 studiobaiocco@gmail.com
 📞 (+39) 347 700 5683
 
