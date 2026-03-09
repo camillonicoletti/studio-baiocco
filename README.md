@@ -56,7 +56,7 @@ studio-baiocco/
 │   └── img/
 │       └── logo/
 │           └── logo_piccolo.png
-├── .env.local                  # Variabili d'ambiente (non versionato)
+├── .env.local                  
 ├── next.config.ts
 ├── tailwind.config.ts
 ├── tsconfig.json
@@ -70,7 +70,7 @@ studio-baiocco/
 | Percorso | Descrizione |
 |---|---|
 | `/` | Homepage con hero, servizi e CTA |
-| `/studio` | Presentazione dello studio e del team |
+| `/studio` | Presentazione dello studio |
 | `/servizi/consulenza` | Consulenza del lavoro |
 | `/servizi/paghe` | Elaborazione paghe |
 | `/servizi/amministrazione` | Amministrazione del personale |
@@ -97,11 +97,7 @@ cd studio-baiocco
 # 2. Installa le dipendenze
 npm install
 
-# 3. Crea il file delle variabili d'ambiente
-cp .env.example .env.local
-# → Modifica .env.local con le tue chiavi API
-
-# 4. Avvia il server di sviluppo
+# 3. Avvia il server di sviluppo
 npm run dev
 ```
 
@@ -110,7 +106,7 @@ Apri [http://localhost:3000](http://localhost:3000) nel browser.
 ### Comandi Disponibili
 
 ```bash
-npm run dev       # Avvia il server di sviluppo (con hot reload)
+npm run dev       # Avvia il server di sviluppo
 npm run build     # Build di produzione
 npm run start     # Avvia il server di produzione (dopo build)
 npm run lint      # Controllo ESLint
@@ -127,7 +123,7 @@ Gestisce l'invio delle email dal form di contatto. Le richieste vengono inviate 
 Il tag GA4 è incluso nel `layout.tsx` globale. I cookie analitici vengono caricati solo previo consenso dell'utente, come da Privacy Policy. [Dashboard GA4 →](https://analytics.google.com/)
 
 ### Google Maps
-Mappa embed nella pagina `/contatti` che mostra la sede dello studio (Via Pietro Nenni, 10 — Matera).
+Mappa embed nella pagina `/contatti` che mostra la sede dello studio.
 
 ### Aruba
 Gestisce la registrazione e il DNS del dominio `studioromanabaiocco.it`. Il dominio punta ai server di Vercel tramite record DNS.
@@ -142,7 +138,7 @@ Il sito è conforme al Regolamento UE 2016/679 (GDPR). L'informativa completa è
 
 ## Autore
 
-Sviluppato da **Camillo Nicoletti**
+Sviluppato da **[Camillo Nicoletti →](www.linkedin.com/in/camillonicoletti)**
 
 Per il cliente: **Studio Baiocco Romana — Consulenza del Lavoro**
 📍 Via Pietro Nenni, 10 — Matera
