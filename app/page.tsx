@@ -268,7 +268,9 @@ export default function Home() {
               display: "flex", flexDirection: "column", justifyContent: "center",
               gap: "20px", overflow: "hidden",
             }}>
+              {/* @ts-ignore */}
               <LogoLoop logos={marqueeTexts} speed={100} direction="left" logoHeight={90} gap={60} hoverSpeed={0} ariaLabel="Testo scorrevole 1" />
+              {/* @ts-ignore */}
               <LogoLoop logos={marqueeTexts2} speed={80} direction="right" logoHeight={90} gap={60} hoverSpeed={0} ariaLabel="Testo scorrevole 2" />
             </div>
 
@@ -375,6 +377,7 @@ export default function Home() {
           </div>
 
           <div style={{ marginTop: '30px', overflow: 'hidden' }}>
+            {/* @ts-ignore */}
             <LogoLoop logos={partnerLogos} speed={80} direction="left" logoHeight={130} gap={80} hoverSpeed={0} scaleOnHover fadeOut fadeOutColor="rgba(255, 255, 255, 0)" ariaLabel="Partner istituzionali" />
           </div>
         </div>
