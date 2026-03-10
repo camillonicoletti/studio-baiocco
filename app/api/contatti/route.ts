@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Sito Studio Baiocco <onboarding@resend.dev>',
+      from: 'Sito Studio Baiocco <noreply@studiobaioccoromana.it>',
       to: ['studiobaiocco@gmail.com'],
       replyTo: email,
       subject: `📬 Nuovo messaggio da ${nome} — Studio Baiocco`,
