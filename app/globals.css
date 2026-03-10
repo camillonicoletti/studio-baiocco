@@ -20,7 +20,9 @@ html {
   height: 100%;
 }
 
-
+body {
+  padding-top: 110px; /* Spazio per la navbar fixed */
+}
 
 
 /* ========================================
@@ -300,25 +302,3 @@ background: linear-gradient(
 
 
 
-body {
-  padding-top: 110px;
-  background-image: url("/img/home/sfondo_bending_capovolto.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-.page-wrapper {
-  position: relative;
-}
-
-
-.page-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(228, 228, 228, 0.45);
-  z-index: 0;
-  pointer-events: none;
-}

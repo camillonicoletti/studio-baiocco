@@ -1,6 +1,13 @@
 /* ========================================
    SFONDO UNICO — su body, condiviso da tutto
    ======================================== */
+body {
+  background-image: url("/img/home/sfondo_bending_capovolto.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 main {
   margin: 0 !important;
@@ -14,7 +21,14 @@ main {
   margin-top: -110px; /* compensa il padding-top del body senza sovrascriverlo globalmente */
 }
 
-
+.page-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(228, 228, 228, 0.45);
+  z-index: 0;
+  pointer-events: none;
+}
 .page-wrapper > * {
   position: relative;
   z-index: 1;
