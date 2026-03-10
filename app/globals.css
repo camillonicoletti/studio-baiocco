@@ -309,6 +309,10 @@ body {
   background-attachment: fixed;
 }
 
+.page-wrapper {
+  position: relative;
+}
+
 
 .page-wrapper::before {
   content: "";
