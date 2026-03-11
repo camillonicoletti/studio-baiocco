@@ -407,7 +407,7 @@ export default function ModulisticaPage() {
             Non trovi il modulo<br /><em>che ti serve?</em>
           </h2>
           <Link href="/contatti" className="modu-cta__btn">
-            Contattaci ora →
+            Contattaci ora
           </Link>
         </section>
 

@@ -118,7 +118,7 @@ export default function AmministrazionePage() {
         <section className="consulenza-cta">
           <span className="consulenza-cta__eyebrow">Inizia oggi</span>
           <h2 className="consulenza-cta__title">Hai bisogno di<br /><em>una consulenza?</em></h2>
-          <Link href="/contatti#form" className="consulenza-cta__btn">Contattaci ora →</Link>
+          <Link href="/contatti#form" className="consulenza-cta__btn">Contattaci ora</Link>
         </section>
 
         {/* FOOTER */}

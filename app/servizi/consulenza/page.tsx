@@ -197,7 +197,7 @@ onMouseLeave={scheduleClose}
             Hai bisogno di<br /><em>una consulenza?</em>
 </h2>
 <Link href="/contatti#form" className="consulenza-cta__btn">
-            Contattaci ora →
+            Contattaci ora
 </Link>
 </section>
 {/* FOOTER */}
