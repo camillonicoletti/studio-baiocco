@@ -90,7 +90,8 @@ return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 return (
 <>
-<main style={{ position: "relative" }}>
+<main style={{ position: "relative", overflowX: "hidden" }}>
+
 {/* SFONDO */}
 <div style={{ position: "fixed", inset: 0, zIndex: -1, backgroundImage: "url('/img/home/sfondo_bending_capovolto.jpg')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat" }} />
 <div style={{ position: "fixed", inset: 0, zIndex: -1, backgroundColor: "rgba(255,255,255,0.45)" }} />
