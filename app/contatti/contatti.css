@@ -681,3 +681,11 @@ a.contatti-row:hover .contatti-row__arrow--icon {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+
+/* Previene lo zoom automatico del browser su iOS/Android */
+.cf input,
+.cf textarea,
+.cf select {
+  font-size: 16px;
+}
