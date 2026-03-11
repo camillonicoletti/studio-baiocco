@@ -28,7 +28,18 @@ export default function PrivacyPage() {
 
   return (
     <>
-      <main style={{ minHeight: '100vh', background: '#f5f7fa' }}>
+      <style>{`
+        .privacy-content { max-width: 820px; margin: 0 auto; padding: 60px 16px 100px; }
+        .privacy-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
+        .privacy-table-wrap table { min-width: 480px; }
+        @media (max-width: 600px) {
+          .privacy-hero { padding: 100px 16px 48px !important; }
+          .privacy-hero h1 { font-size: 1.6rem !important; }
+          .privacy-content { padding: 36px 14px 80px; }
+        }
+      `}</style>
+
+      <main style={{ minHeight: '100vh', background: '#f5f7fa', overflowX: 'hidden' }}>
 
         {/* NAVBAR */}
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -57,11 +68,11 @@ export default function PrivacyPage() {
         </nav>
 
         {/* HERO */}
-        <div style={{ background: 'linear-gradient(135deg, #0a1628 0%, #01247e 100%)', padding: '120px 24px 60px', textAlign: 'center' }}>
+        <div className="privacy-hero" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #01247e 100%)', padding: '120px 24px 60px', textAlign: 'center' }}>
           <span style={{ fontSize: '0.68rem', letterSpacing: '0.28em', textTransform: 'uppercase', color: '#c9a84c', fontWeight: 700, display: 'block', marginBottom: 16 }}>
             Documento legale
           </span>
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#fff', margin: '0 0 16px', letterSpacing: '-0.03em' }}>
+          <h1 style={{ fontSize: 'clamp(1.6rem, 4vw, 3rem)', fontWeight: 800, color: '#fff', margin: '0 0 16px', letterSpacing: '-0.03em' }}>
             Privacy Policy
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.95rem', maxWidth: 560, margin: '0 auto' }}>
@@ -73,7 +84,7 @@ export default function PrivacyPage() {
         </div>
 
         {/* CONTENT */}
-        <div style={{ maxWidth: 820, margin: '0 auto', padding: '60px 24px 100px' }}>
+        <div className="privacy-content">
 
           <Section num="1" title="Titolare del trattamento">
             <p>Il Titolare del trattamento dei dati personali è:</p>
@@ -106,28 +117,30 @@ export default function PrivacyPage() {
           </Section>
 
           <Section num="3" title="Finalità e base giuridica del trattamento">
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
-              <thead>
-                <tr style={{ background: '#01247e', color: '#fff' }}>
-                  <th style={{ padding: '12px 16px', textAlign: 'left', borderRadius: '8px 0 0 0' }}>Finalità</th>
-                  <th style={{ padding: '12px 16px', textAlign: 'left', borderRadius: '0 8px 0 0' }}>Base giuridica</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ['Rispondere alle richieste inviate tramite il form di contatto', 'Interesse legittimo del Titolare (art. 6, par. 1, lett. f GDPR) / Esecuzione di misure precontrattuali'],
-                  ['Gestione della comunicazione con potenziali clienti', 'Interesse legittimo del Titolare'],
-                  ['Analisi statistica anonima del traffico web tramite Google Analytics 4', 'Consenso dell\'interessato (art. 6, par. 1, lett. a GDPR)'],
-                  ['Erogazione del sito tramite infrastruttura Vercel e dominio Aruba', 'Interesse legittimo del Titolare (art. 6, par. 1, lett. f GDPR)'],
-                  ['Adempimento di obblighi di legge', 'Obbligo legale (art. 6, par. 1, lett. c GDPR)'],
-                ].map(([f, b], i) => (
-                  <tr key={i} style={{ background: i % 2 === 0 ? '#f8f9fb' : '#fff' }}>
-                    <td style={{ padding: '12px 16px', borderBottom: '1px solid #eee' }}>{f}</td>
-                    <td style={{ padding: '12px 16px', borderBottom: '1px solid #eee', color: '#555' }}>{b}</td>
+            <div className="privacy-table-wrap">
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+                <thead>
+                  <tr style={{ background: '#01247e', color: '#fff' }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderRadius: '8px 0 0 0' }}>Finalità</th>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', borderRadius: '0 8px 0 0' }}>Base giuridica</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {[
+                    ['Rispondere alle richieste inviate tramite il form di contatto', 'Interesse legittimo del Titolare (art. 6, par. 1, lett. f GDPR) / Esecuzione di misure precontrattuali'],
+                    ['Gestione della comunicazione con potenziali clienti', 'Interesse legittimo del Titolare'],
+                    ['Analisi statistica anonima del traffico web tramite Google Analytics 4', 'Consenso dell\'interessato (art. 6, par. 1, lett. a GDPR)'],
+                    ['Erogazione del sito tramite infrastruttura Vercel e dominio Aruba', 'Interesse legittimo del Titolare (art. 6, par. 1, lett. f GDPR)'],
+                    ['Adempimento di obblighi di legge', 'Obbligo legale (art. 6, par. 1, lett. c GDPR)'],
+                  ].map(([f, b], i) => (
+                    <tr key={i} style={{ background: i % 2 === 0 ? '#f8f9fb' : '#fff' }}>
+                      <td style={{ padding: '12px 16px', borderBottom: '1px solid #eee' }}>{f}</td>
+                      <td style={{ padding: '12px 16px', borderBottom: '1px solid #eee', color: '#555' }}>{b}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </Section>
 
           <Section num="4" title="Modalità di trattamento e conservazione">
@@ -149,32 +162,26 @@ export default function PrivacyPage() {
           </Section>
 
           <Section num="6" title="Servizi di terze parti (Sub-Responsabili)">
-
             <SubSection title="Resend — Invio email transazionali">
               <p>Il sito utilizza <strong>Resend</strong> (Resend Inc., USA) per la trasmissione delle email generate dal form di contatto. Resend agisce come Responsabile del trattamento. I dati trasmessi (nome, email, telefono, messaggio) vengono utilizzati esclusivamente per l'inoltro della comunicazione. Il trasferimento avviene nel rispetto delle Clausole Contrattuali Standard approvate dalla Commissione Europea.</p>
               <p>Per maggiori informazioni: <a href="https://resend.com/privacy" target="_blank" rel="noreferrer">resend.com/privacy</a></p>
             </SubSection>
-
             <SubSection title="Vercel — Hosting e deployment">
               <p>Il sito è pubblicato e distribuito tramite <strong>Vercel Inc.</strong> (USA), piattaforma di hosting e deployment. Vercel gestisce l'infrastruttura server, il routing delle richieste HTTP e la distribuzione dei contenuti tramite CDN globale. Nel normale funzionamento del servizio, Vercel può elaborare dati di connessione quali indirizzo IP, intestazioni HTTP e dati di navigazione per finalità di sicurezza e ottimizzazione delle prestazioni. Vercel agisce in qualità di Responsabile del trattamento ai sensi dell'art. 28 GDPR; il trasferimento dei dati verso gli USA avviene in conformità alle Clausole Contrattuali Standard.</p>
               <p>Per maggiori informazioni: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noreferrer">vercel.com/legal/privacy-policy</a></p>
             </SubSection>
-
             <SubSection title="Aruba S.p.A. — Registrazione e gestione del dominio">
               <p>Il dominio <strong>studiobaioccoromana.it</strong> è registrato e gestito tramite <strong>Aruba S.p.A.</strong> (Italia, Ponte San Pietro — BG), provider italiano soggetto alla normativa europea sulla protezione dei dati. Aruba gestisce i dati anagrafici e di contatto del titolare del dominio ai fini della registrazione e del mantenimento del dominio stesso, secondo i requisiti previsti da Registro.it e ICANN.</p>
               <p>Per maggiori informazioni: <a href="https://www.aruba.it/documents/tc-files/it/03_informativa_privacy_clienti.aspx" target="_blank" rel="noreferrer">aruba.it — Informativa Privacy</a></p>
             </SubSection>
-
             <SubSection title="Google Analytics 4 — Analisi del traffico">
               <p>Previo consenso, il sito utilizza <strong>Google Analytics 4</strong> (Google LLC, USA) per raccogliere statistiche anonime sull'utilizzo del sito. Google Analytics imposta cookie di analisi (come <code>_ga</code>, <code>_ga_*</code>) che raccolgono dati sul comportamento degli utenti. L'indirizzo IP viene anonimizzato prima dell'archiviazione. Google LLC agisce come Responsabile del trattamento; il trasferimento verso gli USA avviene in conformità alle Clausole Contrattuali Standard e al Data Processing Amendment di Google.</p>
               <p>L'utente può opporsi alla raccolta dei dati da parte di Google Analytics installando il componente aggiuntivo per browser disponibile su: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noreferrer">tools.google.com/dlpage/gaoptout</a></p>
               <p>Per maggiori informazioni: <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">policies.google.com/privacy</a></p>
             </SubSection>
-
             <SubSection title="Google Maps — Mappa interattiva">
               <p>La pagina Contatti incorpora una mappa di <strong>Google Maps</strong> (Google LLC, USA). Il caricamento della mappa può comportare la raccolta di dati da parte di Google secondo la propria <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.</p>
             </SubSection>
-
           </Section>
 
           <Section num="7" title="Diritti dell'interessato">
@@ -194,29 +201,31 @@ export default function PrivacyPage() {
 
           <Section num="8" title="Cookie">
             <p>Il sito <strong>studiobaioccoromana.it</strong> utilizza le seguenti tipologie di cookie:</p>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem', marginTop: 12 }}>
-              <thead>
-                <tr style={{ background: '#01247e', color: '#fff' }}>
-                  <th style={{ padding: '10px 14px', textAlign: 'left' }}>Tipologia</th>
-                  <th style={{ padding: '10px 14px', textAlign: 'left' }}>Cookie</th>
-                  <th style={{ padding: '10px 14px', textAlign: 'left' }}>Finalità</th>
-                  <th style={{ padding: '10px 14px', textAlign: 'left' }}>Consenso</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ['Tecnici', 'Cookie di sessione', 'Funzionamento del sito', 'Non richiesto'],
-                  ['Analitici', '_ga, _ga_*', 'Statistiche di navigazione (Google Analytics 4)', 'Richiesto'],
-                ].map(([tipo, nome, finalita, consenso], i) => (
-                  <tr key={i} style={{ background: i % 2 === 0 ? '#f8f9fb' : '#fff' }}>
-                    <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee' }}><b>{tipo}</b></td>
-                    <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee', fontFamily: 'monospace', fontSize: '0.83rem', color: '#01247e' }}>{nome}</td>
-                    <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee' }}>{finalita}</td>
-                    <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee', color: consenso === 'Richiesto' ? '#c0392b' : '#27ae60', fontWeight: 700 }}>{consenso}</td>
+            <div className="privacy-table-wrap">
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem', marginTop: 12 }}>
+                <thead>
+                  <tr style={{ background: '#01247e', color: '#fff' }}>
+                    <th style={{ padding: '10px 14px', textAlign: 'left' }}>Tipologia</th>
+                    <th style={{ padding: '10px 14px', textAlign: 'left' }}>Cookie</th>
+                    <th style={{ padding: '10px 14px', textAlign: 'left' }}>Finalità</th>
+                    <th style={{ padding: '10px 14px', textAlign: 'left' }}>Consenso</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {[
+                    ['Tecnici', 'Cookie di sessione', 'Funzionamento del sito', 'Non richiesto'],
+                    ['Analitici', '_ga, _ga_*', 'Statistiche di navigazione (Google Analytics 4)', 'Richiesto'],
+                  ].map(([tipo, nome, finalita, consenso], i) => (
+                    <tr key={i} style={{ background: i % 2 === 0 ? '#f8f9fb' : '#fff' }}>
+                      <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee' }}><b>{tipo}</b></td>
+                      <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee', fontFamily: 'monospace', fontSize: '0.83rem', color: '#01247e' }}>{nome}</td>
+                      <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee' }}>{finalita}</td>
+                      <td style={{ padding: '10px 14px', borderBottom: '1px solid #eee', color: consenso === 'Richiesto' ? '#c0392b' : '#27ae60', fontWeight: 700 }}>{consenso}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
             <p style={{ marginTop: 14 }}>
               I cookie analitici vengono installati solo previo consenso esplicito dell'utente. Il consenso può essere revocato in qualsiasi momento agendo sulle impostazioni del proprio browser o tramite il componente aggiuntivo di opt-out di Google Analytics disponibile su{' '}
               <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noreferrer">tools.google.com/dlpage/gaoptout</a>.
@@ -326,7 +335,7 @@ function Section({ num, title, children }: { num: string; title: string; childre
   return (
     <div style={{ marginBottom: 48 }}>
       <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginBottom: 20, paddingBottom: 12, borderBottom: '2px solid #01247e' }}>
-        <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#c9a84c', letterSpacing: '0.1em', background: '#fff8e8', border: '1px solid #c9a84c', borderRadius: 4, padding: '2px 8px' }}>
+        <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#c9a84c', letterSpacing: '0.1em', background: '#fff8e8', border: '1px solid #c9a84c', borderRadius: 4, padding: '2px 8px', whiteSpace: 'nowrap' }}>
           Art. {num}
         </span>
         <h2 style={{ margin: 0, fontSize: '1.15rem', fontWeight: 800, color: '#0a1628' }}>{title}</h2>
