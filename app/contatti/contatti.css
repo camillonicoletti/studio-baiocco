@@ -389,7 +389,7 @@ a.contatti-row:hover .contatti-row__arrow--icon {
 
 /* Success */
 .contatti-success {
-  margin-left: -1.8rem;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -500,7 +500,7 @@ a.contatti-row:hover .contatti-row__arrow--icon {
 }
 
 .contatti-wa-block__btn {
-  margin-right: 8.4rem;
+  margin-right: 7.6rem;
   display: inline-flex;
   align-items: center;
   gap: 12px;
