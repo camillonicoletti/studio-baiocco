@@ -160,6 +160,18 @@ export default function ModulisticaPage() {
     closeTimer[0] = setTimeout(() => setSubmenuOpen(false), 120);
   };
 
+  const trackDownload = (m: Modulo) => {
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'file_download', {
+      file_name: m.file.split('/').pop(),
+      file_extension: m.tipo ?? 'pdf',
+      link_text: m.titolo,
+      event_category: 'Modulistica',
+    });
+  }
+};
+
+
   const moduliFiltrati = moduli.filter((m) => {
     const matchCat = categoriaAttiva === 'Tutte' || m.categoria === categoriaAttiva;
     const matchRic =
@@ -319,6 +331,7 @@ export default function ModulisticaPage() {
                       <a
                         href={m.file}
                         download
+                        onClick={() => trackDownload(m)}
                         className="modu-card__btn modu-card__btn--download"
                         aria-label={`Scarica ${m.titolo}`}
                       >
@@ -391,6 +404,7 @@ export default function ModulisticaPage() {
                 <a
                   href={previewModulo.file}
                   download
+                  onClick={() => trackDownload(previewModulo)}
                   className="modu-modal__download"
                 >
                   ↓ Scarica{previewModulo.tipo === 'xlsx' ? ' Excel' : ' il documento'}
