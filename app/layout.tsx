@@ -1,7 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 import type { ReactNode } from "react";
-import SplashScreen from './components/SplashScreen/SplasScreen';
+import SplashScreen from './components/SplashScreen/SplashScreen';
 
 export const metadata = {
   title: 'Studio Romana Baiocco - Consulente del Lavoro a Matera',
@@ -30,7 +30,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Quicksand:wght@400;600&family=Syne:wght@400;700&display=swap"
           rel="stylesheet"
         />
-        {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYV9H8KELB"></script>
         <script dangerouslySetInnerHTML={{__html: `
           window.dataLayer = window.dataLayer || [];
@@ -40,11 +39,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         `}} />
       </head>
       <body>
-        <body>
-          <SplashScreen />
-          {children}
-          <Script src="/js/script.js" strategy="afterInteractive" />
-        </body>
+        <SplashScreen />
         {children}
         <Script src="/js/script.js" strategy="afterInteractive" />
       </body>
