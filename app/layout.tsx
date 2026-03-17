@@ -1,7 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 import type { ReactNode } from "react";
-import SplashScreen from './components/SplashScreen/SplashScreen';
+import SplashScreen from './components/SplashScreen/SplasScreen';
 
 export const metadata = {
   title: 'Studio Romana Baiocco - Consulente del Lavoro a Matera',
