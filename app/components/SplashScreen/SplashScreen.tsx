@@ -7,9 +7,17 @@ export default function SplashScreen() {
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setOpacity(0), 1500);
-    const t2 = setTimeout(() => setVisible(false), 2300);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
+    const handleLoad = () => {
+      setTimeout(() => setOpacity(0), 300);
+      setTimeout(() => setVisible(false), 1100);
+    };
+
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+      return () => window.removeEventListener('load', handleLoad);
+    }
   }, []);
 
   if (!visible) return null;
