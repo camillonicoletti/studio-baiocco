@@ -4,11 +4,15 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function SplashScreen() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const [opacity, setOpacity] = useState(1);
   const pathname = usePathname();
 
+  const pagineConSplash = ['/', '/studio'];
+
   useEffect(() => {
+    if (!pagineConSplash.includes(pathname)) return;
+
     setVisible(true);
     setOpacity(1);
 
