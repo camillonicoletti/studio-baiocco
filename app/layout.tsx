@@ -1,6 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 import type { ReactNode } from "react";
+import SplashScreen from './components/SplashScreen/SplashScreen';
 
 export const metadata = {
   title: 'Studio Romana Baiocco - Consulente del Lavoro a Matera',
@@ -39,6 +40,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         `}} />
       </head>
       <body>
+        <body>
+          <SplashScreen />
+          {children}
+          <Script src="/js/script.js" strategy="afterInteractive" />
+        </body>
         {children}
         <Script src="/js/script.js" strategy="afterInteractive" />
       </body>
