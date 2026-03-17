@@ -1,12 +1,17 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function SplashScreen() {
   const [visible, setVisible] = useState(true);
   const [opacity, setOpacity] = useState(1);
+  const pathname = usePathname();
 
   useEffect(() => {
+    setVisible(true);
+    setOpacity(1);
+
     const handleLoad = () => {
       setTimeout(() => setOpacity(0), 300);
       setTimeout(() => setVisible(false), 1100);
@@ -18,7 +23,7 @@ export default function SplashScreen() {
       window.addEventListener('load', handleLoad);
       return () => window.removeEventListener('load', handleLoad);
     }
-  }, []);
+  }, [pathname]);
 
   if (!visible) return null;
 
