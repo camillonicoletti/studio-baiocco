@@ -29,7 +29,7 @@ const moduli: Modulo[] = [
     file: '/moduli/FoglioPresenze_StudioBaiocco.xlsx',         // ← download Excel
     filePreview: '/moduli/FoglioPresenze_StudioBaiocco.pdf',   // ← anteprima PDF
     tipo: 'xlsx',
-    aggiornato: 'Mar 2026',
+    aggiornato: 'Apr 2026',
   },
   {
     id: 'm04',
@@ -60,6 +60,18 @@ const moduli: Modulo[] = [
     tag: 'IAD',
     file: '/moduli/Indennita_Aggiuntiva_e_Ulteriore_Detrazione.pdf',
     aggiornato: 'Mar 2026',
+  },
+  {
+    id: 'm10',
+    categoria: 'Detrazioni & Agevolazioni',
+    titolo: 'Rinuncia Imposta Sostitutiva  5% su incrementi retributivi',
+    desc: 'Modulo per la rinuncia all\'imposta sostitutiva del 5% su incrementi retributivi corrisposti nel 2026.',
+    icon: '📝',
+    tag: 'RIN',
+    file: '/moduli/Modulo_Rinuncia_Imposta_Sostitutiva_5_percentuale_su_incrementi_retributivi.pdf',         
+    filePreview: '/moduli/Modulo_Rinuncia_Imposta_Sostitutiva_5_percentuale_su_incrementi_retributivi.pdf',   
+    tipo: 'pdf',
+    aggiornato: 'Apr 2026',
   },
   {
     id: 'm07',
