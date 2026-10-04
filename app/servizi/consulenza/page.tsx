@@ -234,6 +234,7 @@ onMouseLeave={scheduleClose}
 <li><i className="fa-solid fa-phone"></i><span>(+39) 347 700 5683</span></li>
 <li><a href="mailto:studiobaiocco@gmail.com"><i className="fa-solid fa-envelope"></i><span>studiobaiocco@gmail.com</span></a></li>
 <li><a href="https://maps.app.goo.gl/bUaAH2uT7iVKxHgT7" target="_blank" rel="noreferrer"><i className="fa-solid fa-location-dot"></i><span>Via Pietro Nenni, 10<br />Matera</span></a></li>
+<li><i className="fa-solid fa-file-invoice"></i><span>P.IVA 01140340777</span></li>
 </ul>
 </div>
 </div>

@@ -512,6 +512,10 @@ export default function ModulisticaPage() {
                     <span>Via Pietro Nenni, 10<br />Matera</span>
                   </a>
                 </li>
+                <li>
+                  <i className="fa-solid fa-file-invoice"></i>
+                  <span>P.IVA 01140340777</span>
+                </li>
               </ul>
             </div>
           </div>

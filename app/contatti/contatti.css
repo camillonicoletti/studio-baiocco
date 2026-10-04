@@ -6,25 +6,39 @@
 }
 
 /* ══════════════════════════════════════
-   SPLIT: pannello info | mappa grande
+   MAPPA A TUTTO SCHERMO + CARD CONTATTI SOPRA
 ══════════════════════════════════════ */
 .contatti-split {
   display: grid;
-  grid-template-columns: 480px 1fr;
-  min-height: 100vh;
-  padding-top: 60px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: 16px 24px 24px;
 }
 
-/* ── PANNELLO SINISTRO ── */
+/* Mappa e card occupano la stessa cella: la card si sovrappone alla mappa */
+.contatti-split > .contatti-map-panel,
+.contatti-split > .contatti-panel {
+  grid-area: 1 / 1;
+}
+
+/* ── CARD CONTATTI ── */
 .contatti-panel {
-  background: transparent;
-  padding: 10px 52px 60px;
+  align-self: center;
+  justify-self: start;
+  width: 440px;
+  max-width: calc(100% - 64px);
+  margin: 32px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 36, 123, 0.18);
+  padding: 40px 40px 36px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  border-right: 1px solid rgba(255,255,255,0.15);
+  gap: 32px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .contatti-panel__eyebrow {
@@ -38,7 +52,7 @@
 }
 
 .contatti-panel__title {
-  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-size: clamp(2.4rem, 3.4vw, 3.4rem);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -178,11 +192,17 @@ a.contatti-row:hover .contatti-row__arrow--icon {
   position: relative;
   overflow: hidden;
   border-radius: 30px;
+  min-height: calc(100vh - 150px);
 }
 
+/* L'iframe sborda in alto di 160px: nasconde il riquadro info di Google
+   in alto a sinistra, i controlli in basso a destra restano visibili */
 .contatti-map-panel iframe {
+  position: absolute;
+  left: 0;
+  top: -160px;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 160px);
   display: block;
   filter: grayscale(10%) contrast(1.05) saturate(0.9);
 }
@@ -532,8 +552,9 @@ a.contatti-row:hover .contatti-row__arrow--icon {
    RESPONSIVE
 ══════════════════════════════════════ */
 @media (max-width: 1100px) {
-  .contatti-split {
-    grid-template-columns: 400px 1fr;
+  .contatti-panel {
+    width: 360px;
+    padding: 30px 28px 26px;
   }
   .contatti-form-section__inner {
     grid-template-columns: 300px 1fr;
@@ -549,19 +570,34 @@ a.contatti-row:hover .contatti-row__arrow--icon {
   .contatti-map-panel {
     border-radius: 0;
   }
+  /* Sotto i 900px: card e mappa tornano una sotto l'altra */
   .contatti-split {
-    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     min-height: auto;
+    padding: 60px 0 0;
+  }
+
+  .contatti-split > .contatti-map-panel,
+  .contatti-split > .contatti-panel {
+    grid-area: auto;
   }
 
   .contatti-panel {
-    border-right: none;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-radius: 0;
+    box-shadow: none;
     border-bottom: 1px solid rgba(0,0,0,0.1);
     padding: 60px 32px 48px;
   }
 
   .contatti-map-panel {
     height: 420px;
+    min-height: 0;
   }
 
   .contatti-form-section__inner {
