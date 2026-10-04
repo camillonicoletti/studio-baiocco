@@ -86,12 +86,22 @@ const moduli: Modulo[] = [
   {
     id: 'm08',
     categoria: 'Assunzione & Contratti',
-    titolo: 'Scelta Destinazione TFR',
+    titolo: 'Modulo TFR2 – Assunti fino al 30/06/26',
     desc: 'Modulo per la scelta della destinazione del Trattamento di Fine Rapporto a fondo pensione o mantenimento in azienda.',
     icon: '🏦',
     tag: 'TFR',
     file: '/moduli/SCELTA_DESTINAZIONE_TFR.pdf',
     aggiornato: 'Mar 2026',
+  },
+  {
+    id: 'm11',
+    categoria: 'Assunzione & Contratti',
+    titolo: 'Modulo TFR3 – Assunti dopo il 30/06/26',
+    desc: "Modulo per la scelta della destinazione del TFR per i lavoratori assunti dopo il 30 giugno 2026, con adesione automatica alla previdenza complementare (art. 8 D.Lgs. 252/2005, come modificato dalla L. 199/2025).",
+    icon: '🏦',
+    tag: 'TFR3',
+    file: '/moduli/Modulo_TFR3_compilabile.pdf',
+    aggiornato: 'Ott 2026',
   },
   {
     id: 'm09',
